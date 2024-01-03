@@ -10,18 +10,18 @@ public class Even {
 
         var guessCount = 0;
         while (guessCount < 3){
-            int max_random = 100;
-            int int_random = rand.nextInt(max_random);
-            System.out.println("Question: " + int_random);
+            int maxRandom = 100;
+            int intRandom = rand.nextInt(maxRandom);
+            System.out.println("Question: " + intRandom);
             Scanner scanner = new Scanner(System.in);
             String answer = scanner.nextLine();
-            var correctAnswer = (int_random % 2 == 0) ? "yes" : "no";
-            var wrongAnswer = (int_random % 2 == 0) ? "no" : "yes";
+            var correctAnswer = (intRandom % 2 == 0) ? "yes" : "no";
+            var wrongAnswer = (intRandom % 2 == 0) ? "no" : "yes";
             if (answer.equals(correctAnswer)) {
                 System.out.println("Correct!");
                 guessCount +=1;
             } else {
-                System.out.println("'" + correctAnswer + "' is wrong answer ;(. Correct answer was '" + wrongAnswer + "'.");
+                System.out.println("'" + correctAnswer + "' is wrong answer ;(. Correct answer was '" + answer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 break;
             }

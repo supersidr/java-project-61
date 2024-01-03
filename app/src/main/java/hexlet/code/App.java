@@ -7,6 +7,8 @@ public class App {
             Greet.greetings();
         } else if (game == 2 ) {
             Even.isEven();
+        } else if (game ==3) {
+            Calc.calcGame();
         };
     }
 }
