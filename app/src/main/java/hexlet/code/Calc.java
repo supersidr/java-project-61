@@ -4,8 +4,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Calc {
-    public static void calcGame() {
-        var userName = Greet.greetings();
+    public static void gameCalc() {
+        var userName = Messages.greetings();
         System.out.println("What is the result of the expression?");
         Random rand = new Random();
         int maxRandom = 100;
@@ -37,13 +37,12 @@ public class Calc {
                 System.out.println("Correct!");
                 guessCount +=1;
             } else {
-                System.out.println("'" + correctAnswer + "' is wrong answer ;(. Correct answer was '" + answer + "'.");
-                System.out.println("Let's try again, " + userName + "!");
+                Messages.loose(answer, correctAnswer, userName);
                 break;
             }
         }
         if (guessCount == 3) {
-            System.out.println("Congratulations, " + userName + "!");
+            Messages.win(userName);
         }
     }
 }

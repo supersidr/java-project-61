@@ -3,8 +3,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Even {
-    public static void isEven() {
-        var userName = Greet.greetings();
+    public static void gameEven() {
+        var userName = Messages.greetings();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Random rand = new Random();
 
@@ -21,13 +21,12 @@ public class Even {
                 System.out.println("Correct!");
                 guessCount +=1;
             } else {
-                System.out.println("'" + correctAnswer + "' is wrong answer ;(. Correct answer was '" + answer + "'.");
-                System.out.println("Let's try again, " + userName + "!");
+                Messages.loose(answer, correctAnswer, userName);
                 break;
             }
         }
         if (guessCount == 3) {
-            System.out.println("Congratulations, " + userName + "!");
+            Messages.win(userName);
         }
     }
 
