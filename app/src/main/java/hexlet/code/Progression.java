@@ -22,10 +22,11 @@ public class Progression {
             for (int i = 0; i < maxRandom; i++) {
                 if (i == guessNumber) {
                     System.out.print(" ..");
-                } else  {
+                } else {
                     System.out.print(" " + progression[i]);
                 }
             }
+            System.out.print("\n");
 
             Scanner scanner = new Scanner(System.in);
             int answer = scanner.nextInt();
@@ -53,7 +54,7 @@ public class Progression {
         int step = rand.nextInt(maxStep);
         x[0] = first;
         for (int i = 1; i < sizeProgression; i++) {
-            x[i] = x[0] + step;
+            x[i] = x[i-1] + step;
         }
         return x;
     }

@@ -11,6 +11,8 @@ public class App {
             Calc.gameCalc();
         } else if (game == 4) {
             GCD.gameGCD();
-        };
+        } else if (game == 5) {
+            Progression.gameProgression();
+        }
     }
 }
