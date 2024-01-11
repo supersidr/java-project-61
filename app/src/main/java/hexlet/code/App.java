@@ -13,6 +13,8 @@ public class App {
             GCD.gameGCD();
         } else if (game == 5) {
             Progression.gameProgression();
+        } else if (game == 6) {
+            Prime.gamePrime();
         }
     }
 }
