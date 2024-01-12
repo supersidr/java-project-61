@@ -6,7 +6,7 @@ public class App {
     public static final int CALC_GAME_ID = 3;
     public static final int GCD_GAME_ID = 4;
     public static final int PROGRESSION_GAME_ID = 5;
-    public static final int PRIME_GAME_ID = 5;
+    public static final int PRIME_GAME_ID = 6;
     public static final int GUESS_COUNT = 3;
     public static final int MAX_NUMBER = 100;
     public static final int MATH_ACTION_NUMBERS = 3;
