@@ -12,13 +12,13 @@ public class Calc {
         int mathActionNumbers = 3;
 
         var guessCount = 0;
-        while (guessCount < 3){
+        while (guessCount < 3) {
 
             int intRandom1 = rand.nextInt(maxRandom);
             int intRandom2 = rand.nextInt(maxRandom);
             int mathActionNumber = rand.nextInt(mathActionNumbers);
             int correctAnswer = 0;
-            if (mathActionNumber == 0){
+            if (mathActionNumber == 0) {
                 System.out.println("Question: " + intRandom1 + " + " + intRandom2);
                 correctAnswer = intRandom1 + intRandom2;
             } else if (mathActionNumber == 1) {
@@ -35,7 +35,7 @@ public class Calc {
 
             if (correctAnswer == answer) {
                 System.out.println("Correct!");
-                guessCount +=1;
+                guessCount += 1;
             } else {
                 Messages.loose(answer, correctAnswer, userName);
                 break;

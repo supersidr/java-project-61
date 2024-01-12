@@ -1,9 +1,10 @@
 package hexlet.code;
+
 import java.util.Random;
 import java.util.Scanner;
 
 public class Progression {
-//    Я генерирую 1 случайное число до 100. Дальше я гененирую шаг прогрессии
+    //    Я генерирую 1 случайное число до 100. Дальше я гененирую шаг прогрессии
 //    случайное число до 10. Создаю массив из 10 символов. Генерирую загаданный номер числа.
 //    Дальше вывожу на печать весь масстив через соут без лн с пробелом при выводе вместо счисла мечатаю две точки.
 //    Сравниваю ответы и победа!
@@ -16,7 +17,7 @@ public class Progression {
 
         var guessCount = 0;
 
-        while (guessCount < 3){
+        while (guessCount < 3) {
             int[] progression = genProgression();
             System.out.print("Question:");
             for (int i = 0; i < maxRandom; i++) {
@@ -33,7 +34,7 @@ public class Progression {
             var correctAnswer = progression[guessNumber];
             if (correctAnswer == answer) {
                 System.out.println("Correct!");
-                guessCount +=1;
+                guessCount += 1;
             } else {
                 Messages.loose(answer, correctAnswer, userName);
                 break;
@@ -44,7 +45,7 @@ public class Progression {
         }
     }
 
-    public static int[] genProgression(){
+    public static int[] genProgression() {
         int sizeProgression = 10;
         int[] x = new int[sizeProgression];
         Random rand = new Random();
@@ -54,7 +55,7 @@ public class Progression {
         int step = rand.nextInt(maxStep);
         x[0] = first;
         for (int i = 1; i < sizeProgression; i++) {
-            x[i] = x[i-1] + step;
+            x[i] = x[i - 1] + step;
         }
         return x;
     }

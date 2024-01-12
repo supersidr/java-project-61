@@ -1,4 +1,5 @@
 package hexlet.code;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -9,7 +10,7 @@ public class GCD {
         Random rand = new Random();
 
         var guessCount = 0;
-        while (guessCount < 3){
+        while (guessCount < 3) {
             int maxRandom = 100;
             int intRandom1 = rand.nextInt(maxRandom);
             int intRandom2 = rand.nextInt(maxRandom);
@@ -19,7 +20,7 @@ public class GCD {
             var correctAnswer = GCD.calcGcd(intRandom1, intRandom2);
             if (correctAnswer == answer) {
                 System.out.println("Correct!");
-                guessCount +=1;
+                guessCount += 1;
             } else {
                 Messages.loose(answer, correctAnswer, userName);
                 break;
@@ -30,11 +31,11 @@ public class GCD {
         }
     }
 
-    public static int calcGcd(int x, int y){
+    public static int calcGcd(int x, int y) {
         int count = Math.min(x, y);
 
-        for (int n = count; n >= 1; n--){
-            if (x % n == 0 && y % n == 0){
+        for (int n = count; n >= 1; n--) {
+            if (x % n == 0 && y % n == 0) {
                 count = n;
                 break;
             }

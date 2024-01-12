@@ -1,4 +1,5 @@
 package hexlet.code;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -9,7 +10,7 @@ public class Even {
         Random rand = new Random();
 
         var guessCount = 0;
-        while (guessCount < 3){
+        while (guessCount < 3) {
             int maxRandom = 100;
             int intRandom = rand.nextInt(maxRandom);
             System.out.println("Question: " + intRandom);
@@ -19,7 +20,7 @@ public class Even {
             var wrongAnswer = (intRandom % 2 == 0) ? "no" : "yes";
             if (answer.equals(correctAnswer)) {
                 System.out.println("Correct!");
-                guessCount +=1;
+                guessCount += 1;
             } else {
                 Messages.loose(answer, correctAnswer, userName);
                 break;
