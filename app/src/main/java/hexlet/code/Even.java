@@ -10,8 +10,8 @@ public class Even {
         Random rand = new Random();
 
         var guessCount = 0;
-        while (guessCount < 3) {
-            int maxRandom = 100;
+        while (guessCount < App.GUESS_COUNT) {
+            int maxRandom = App.MAX_NUMBER;
             int intRandom = rand.nextInt(maxRandom);
             System.out.println("Question: " + intRandom);
             Scanner scanner = new Scanner(System.in);
@@ -26,7 +26,7 @@ public class Even {
                 break;
             }
         }
-        if (guessCount == 3) {
+        if (guessCount == App.GUESS_COUNT) {
             Messages.win(userName);
         }
     }
