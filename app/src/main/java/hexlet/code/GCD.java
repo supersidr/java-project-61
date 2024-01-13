@@ -10,10 +10,10 @@ public class GCD {
         Random rand = new Random();
 
         var guessCount = 0;
-        while (guessCount < 3) {
-            int maxRandom = 100;
-            int intRandom1 = rand.nextInt(maxRandom);
-            int intRandom2 = rand.nextInt(maxRandom);
+        while (guessCount < App.GUESS_COUNT) {
+            int maxRandom = App.MAX_NUMBER;
+            int intRandom1 = rand.nextInt(maxRandom) + 1;
+            int intRandom2 = rand.nextInt(maxRandom) + 1;
             System.out.println("Question: " + intRandom1 + " " + intRandom2);
             Scanner scanner = new Scanner(System.in);
             int answer = scanner.nextInt();
@@ -26,7 +26,7 @@ public class GCD {
                 break;
             }
         }
-        if (guessCount == 3) {
+        if (guessCount == App.GUESS_COUNT) {
             Messages.win(userName);
         }
     }
