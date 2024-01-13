@@ -4,20 +4,17 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Progression {
-    //    Я генерирую 1 случайное число до 100. Дальше я гененирую шаг прогрессии
-//    случайное число до 10. Создаю массив из 10 символов. Генерирую загаданный номер числа.
-//    Дальше вывожу на печать весь масстив через соут без лн с пробелом при выводе вместо счисла мечатаю две точки.
-//    Сравниваю ответы и победа!
+
     public static void gameProgression() {
         var userName = Messages.greetings();
         System.out.println("What number is missing in the progression?");
-        int maxRandom = 10;
+        int maxRandom = App.MAX_PROGRESSION_STEP;
         Random rand = new Random();
         int guessNumber = rand.nextInt(maxRandom);
 
         var guessCount = 0;
 
-        while (guessCount < 3) {
+        while (guessCount < App.GUESS_COUNT) {
             int[] progression = genProgression();
             System.out.print("Question:");
             for (int i = 0; i < maxRandom; i++) {
@@ -40,17 +37,18 @@ public class Progression {
                 break;
             }
         }
-        if (guessCount == 3) {
+
+        if (guessCount == App.GUESS_COUNT) {
             Messages.win(userName);
         }
     }
 
     public static int[] genProgression() {
-        int sizeProgression = 10;
+        int sizeProgression = App.SIZE_PROGRESSION;
         int[] x = new int[sizeProgression];
         Random rand = new Random();
-        int maxFirst = 100;
-        int maxStep = 10;
+        int maxFirst = App.MAX_NUMBER;
+        int maxStep = App.MAX_PROGRESSION_STEP;
         int first = rand.nextInt(maxFirst);
         int step = rand.nextInt(maxStep);
         x[0] = first;

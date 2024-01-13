@@ -10,8 +10,8 @@ public class Prime {
         Random rand = new Random();
 
         var guessCount = 0;
-        while (guessCount < 3) {
-            int maxRandom = 100;
+        while (guessCount < App.GUESS_COUNT) {
+            int maxRandom = App.MAX_NUMBER;
             int intRandom = rand.nextInt(maxRandom);
             var correctAnswer = "no";
             System.out.println("Question: " + intRandom);
@@ -28,7 +28,7 @@ public class Prime {
                 break;
             }
         }
-        if (guessCount == 3) {
+        if (guessCount == App.GUESS_COUNT) {
             Messages.win(userName);
         }
     }
@@ -38,8 +38,9 @@ public class Prime {
             return false;
         }
         for (int i = 2; i <= num / 2; i++) {
-            if ((num % i) == 0)
+            if ((num % i) == 0) {
                 return false;
+            }
         }
         return true;
     }

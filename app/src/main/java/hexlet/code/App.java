@@ -9,6 +9,8 @@ public class App {
     public static final int PRIME_GAME_ID = 6;
     public static final int GUESS_COUNT = 3;
     public static final int MAX_NUMBER = 100;
+    public static final int MAX_PROGRESSION_STEP = 10;
+    public static final int SIZE_PROGRESSION = 10;
     public static final int MATH_ACTION_NUMBERS = 3;
 
     public static void main(String[] args) {

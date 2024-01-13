@@ -42,7 +42,7 @@ public class Calc {
                 break;
             }
         }
-        if (guessCount == 3) {
+        if (guessCount == App.GUESS_COUNT) {
             Messages.win(userName);
         }
     }
