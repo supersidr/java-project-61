@@ -4,14 +4,17 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Prime {
+    public static final int GUESS_COUNT = 3;
+    public static final int MAX_NUMBER = 100;
+
     public static void gamePrime() {
         var userName = Messages.greetings();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Random rand = new Random();
 
         var guessCount = 0;
-        while (guessCount < App.GUESS_COUNT) {
-            int maxRandom = App.MAX_NUMBER;
+        while (guessCount < GUESS_COUNT) {
+            int maxRandom = MAX_NUMBER;
             int intRandom = rand.nextInt(maxRandom);
             var correctAnswer = "no";
             System.out.println("Question: " + intRandom);
@@ -28,7 +31,7 @@ public class Prime {
                 break;
             }
         }
-        if (guessCount == App.GUESS_COUNT) {
+        if (guessCount == GUESS_COUNT) {
             Messages.win(userName);
         }
     }

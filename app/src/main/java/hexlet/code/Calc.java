@@ -5,15 +5,19 @@ import java.util.Scanner;
 
 
 public class Calc {
+    public static final int GUESS_COUNT = 3;
+    public static final int MAX_NUMBER = 100;
+    public static final int MATH_ACTION_NUMBERS = 3;
+
     public static void gameCalc() {
         var userName = Messages.greetings();
         System.out.println("What is the result of the expression?");
         Random rand = new Random();
-        int maxRandom = App.MAX_NUMBER;
-        int mathActionNumbers = App.MATH_ACTION_NUMBERS;
+        int maxRandom = MAX_NUMBER;
+        int mathActionNumbers = MATH_ACTION_NUMBERS;
 
         var guessCount = 0;
-        while (guessCount < App.GUESS_COUNT) {
+        while (guessCount < GUESS_COUNT) {
 
             int intRandom1 = rand.nextInt(maxRandom);
             int intRandom2 = rand.nextInt(maxRandom);
@@ -42,7 +46,7 @@ public class Calc {
                 break;
             }
         }
-        if (guessCount == App.GUESS_COUNT) {
+        if (guessCount == GUESS_COUNT) {
             Messages.win(userName);
         }
     }

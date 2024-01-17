@@ -4,17 +4,21 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Progression {
+    public static final int GUESS_COUNT = 3;
+    public static final int MAX_NUMBER = 100;
+    public static final int MAX_PROGRESSION_STEP = 10;
+    public static final int SIZE_PROGRESSION = 10;
 
     public static void gameProgression() {
         var userName = Messages.greetings();
         System.out.println("What number is missing in the progression?");
-        int maxRandom = App.MAX_PROGRESSION_STEP;
+        int maxRandom = MAX_PROGRESSION_STEP;
         Random rand = new Random();
         int guessNumber = rand.nextInt(maxRandom);
 
         var guessCount = 0;
 
-        while (guessCount < App.GUESS_COUNT) {
+        while (guessCount < GUESS_COUNT) {
             int[] progression = genProgression();
             System.out.print("Question:");
             for (int i = 0; i < maxRandom; i++) {
@@ -38,17 +42,17 @@ public class Progression {
             }
         }
 
-        if (guessCount == App.GUESS_COUNT) {
+        if (guessCount == GUESS_COUNT) {
             Messages.win(userName);
         }
     }
 
     public static int[] genProgression() {
-        int sizeProgression = App.SIZE_PROGRESSION;
+        int sizeProgression = SIZE_PROGRESSION;
         int[] x = new int[sizeProgression];
         Random rand = new Random();
-        int maxFirst = App.MAX_NUMBER;
-        int maxStep = App.MAX_PROGRESSION_STEP;
+        int maxFirst = MAX_NUMBER;
+        int maxStep = MAX_PROGRESSION_STEP;
         int first = rand.nextInt(maxFirst);
         int step = rand.nextInt(maxStep);
         x[0] = first;
