@@ -10,13 +10,27 @@ public class App {
 
     public static void main(String[] args) {
         var game = Cli.chooseGame();
-        switch (game){
-            case GREET_GAME_ID: Messages.greetings();
-            case CALC_GAME_ID: Calc.gameCalc();
-            case EVEN_GAME_ID: Even.gameEven();
-            case GCD_GAME_ID: GCD.gameGCD();
-            case PROGRESSION_GAME_ID: Progression.gameProgression();
-            case PRIME_GAME_ID: Prime.gamePrime();
+        switch (game) {
+            case GREET_GAME_ID:
+                Messages.greetings();
+                break;
+            case CALC_GAME_ID:
+                Calc.gameCalc();
+                break;
+            case EVEN_GAME_ID:
+                Even.gameEven();
+                break;
+            case GCD_GAME_ID:
+                GCD.gameGCD();
+                break;
+            case PROGRESSION_GAME_ID:
+                Progression.gameProgression();
+                break;
+            case PRIME_GAME_ID:
+                Prime.gamePrime();
+                break;
+            default:
+                break;
         }
     }
 }
