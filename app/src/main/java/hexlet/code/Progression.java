@@ -1,50 +1,30 @@
 package hexlet.code;
 
 import java.util.Random;
-import java.util.Scanner;
 
-public class Progression {
-    public static final int GUESS_COUNT = 3;
+public class Progression implements Game {
     public static final int MAX_NUMBER = 100;
     public static final int MAX_PROGRESSION_STEP = 10;
     public static final int SIZE_PROGRESSION = 10;
 
-    public static void gameProgression() {
-        var userName = Messages.greetings();
-        System.out.println("What number is missing in the progression?");
+    public String getAnswer() {
         int maxRandom = MAX_PROGRESSION_STEP;
         Random rand = new Random();
         int guessNumber = rand.nextInt(maxRandom);
 
-        var guessCount = 0;
-
-        while (guessCount < GUESS_COUNT) {
-            int[] progression = genProgression();
-            System.out.print("Question:");
-            for (int i = 0; i < maxRandom; i++) {
-                if (i == guessNumber) {
-                    System.out.print(" ..");
-                } else {
-                    System.out.print(" " + progression[i]);
-                }
-            }
-            System.out.print("\n");
-
-            Scanner scanner = new Scanner(System.in);
-            int answer = scanner.nextInt();
-            var correctAnswer = progression[guessNumber];
-            if (correctAnswer == answer) {
-                System.out.println("Correct!");
-                guessCount += 1;
+        int[] progression = genProgression();
+        System.out.print("Question:");
+        for (int i = 0; i < maxRandom; i++) {
+            if (i == guessNumber) {
+                System.out.print(" ..");
             } else {
-                Messages.loose(answer, correctAnswer, userName);
-                break;
+                System.out.print(" " + progression[i]);
             }
         }
+        System.out.print("\n");
 
-        if (guessCount == GUESS_COUNT) {
-            Messages.win(userName);
-        }
+        var correctAnswer = progression[guessNumber];
+        return Integer.toString(correctAnswer);
     }
 
     public static int[] genProgression() {
@@ -60,5 +40,9 @@ public class Progression {
             x[i] = x[i - 1] + step;
         }
         return x;
+    }
+
+    public void messageGameGreetings() {
+        System.out.println("What number is missing in the progression?");
     }
 }

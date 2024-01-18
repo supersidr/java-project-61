@@ -1,39 +1,22 @@
 package hexlet.code;
 
 import java.util.Random;
-import java.util.Scanner;
 
-public class Prime {
-    public static final int GUESS_COUNT = 3;
+public class Prime implements Game {
     public static final int MAX_NUMBER = 100;
 
-    public static void gamePrime() {
-        var userName = Messages.greetings();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+    public String getAnswer() {
+
         Random rand = new Random();
 
-        var guessCount = 0;
-        while (guessCount < GUESS_COUNT) {
-            int maxRandom = MAX_NUMBER;
-            int intRandom = rand.nextInt(maxRandom);
-            var correctAnswer = "no";
-            System.out.println("Question: " + intRandom);
-            if (isPrime(intRandom)) {
-                correctAnswer = "yes";
-            }
-            Scanner scanner = new Scanner(System.in);
-            String answer = scanner.nextLine();
-            if (answer.equals(correctAnswer)) {
-                System.out.println("Correct!");
-                guessCount += 1;
-            } else {
-                Messages.loose(answer, correctAnswer, userName);
-                break;
-            }
+        int maxRandom = MAX_NUMBER;
+        int intRandom = rand.nextInt(maxRandom);
+        var correctAnswer = "no";
+        System.out.println("Question: " + intRandom);
+        if (isPrime(intRandom)) {
+            correctAnswer = "yes";
         }
-        if (guessCount == GUESS_COUNT) {
-            Messages.win(userName);
-        }
+        return correctAnswer;
     }
 
     public static boolean isPrime(int num) {
@@ -46,5 +29,10 @@ public class Prime {
             }
         }
         return true;
+    }
+
+    @Override
+    public void messageGameGreetings() {
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     }
 }

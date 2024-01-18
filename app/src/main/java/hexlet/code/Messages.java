@@ -18,7 +18,7 @@ public class Messages {
     }
 
     public static void loose(String answer, String correctAnswer, String userName) {
-        System.out.println("'" + correctAnswer + "' is wrong answer ;(. Correct answer was '" + answer + "'.");
+        System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
         System.out.println("Let's try again, " + userName + "!");
     }
 
