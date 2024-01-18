@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int GUESS_COUNT = 3;
-    public static void brainGame(Game game){
+
+    public static void brainGame(Game game) {
         var userName = Messages.greetings();
         game.messageGameGreetings();
         var guessCount = 0;
