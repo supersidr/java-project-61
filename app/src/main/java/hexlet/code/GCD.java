@@ -13,8 +13,6 @@ public class GCD implements Game {
         int intRandom1 = rand.nextInt(maxRandom) + 1;
         int intRandom2 = rand.nextInt(maxRandom) + 1;
         System.out.println("Question: " + intRandom1 + " " + intRandom2);
-        Scanner scanner = new Scanner(System.in);
-        int answer = scanner.nextInt();
         var correctAnswer = GCD.calcGcd(intRandom1, intRandom2);
         return Integer.toString(correctAnswer);
     }
