@@ -8,8 +8,6 @@ public class Calc implements Game {
     public static final int MATH_ACTION_NUMBERS = 3;
 
     public String getAnswer() {
-        var userName = Messages.greetings();
-
         Random rand = new Random();
         int maxRandom = MAX_NUMBER;
         int mathActionNumbers = MATH_ACTION_NUMBERS;
