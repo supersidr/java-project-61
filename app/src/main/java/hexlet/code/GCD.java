@@ -29,7 +29,6 @@ public class GCD implements Game {
         return count;
     }
 
-    @Override
     public void messageGameGreetings() {
         System.out.println("Find the greatest common divisor of given numbers.");
     }
