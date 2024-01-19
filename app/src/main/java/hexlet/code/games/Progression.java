@@ -1,8 +1,8 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Random;
 
-class Progression implements Game {
+public class Progression implements Game {
     public static final int MAX_NUMBER = 100;
     public static final int MAX_PROGRESSION_STEP = 10;
     public static final int SIZE_PROGRESSION = 10;

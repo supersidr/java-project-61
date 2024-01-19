@@ -1,7 +1,7 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Random;
-class GCD implements Game {
+public class GCD implements Game {
     public static final int MAX_NUMBER = 100;
 
     public String getAnswer() {
