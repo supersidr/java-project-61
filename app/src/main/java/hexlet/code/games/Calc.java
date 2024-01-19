@@ -3,7 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 
 
-public class Calc implements Game {
+public final class Calc implements Game {
     public static final int MAX_NUMBER = 100;
     public static final int MATH_ACTION_NUMBERS = 3;
 

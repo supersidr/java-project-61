@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import java.util.Random;
 
-public class Even implements Game {
+public final class Even implements Game {
 
     public static final int MAX_NUMBER = 100;
 
