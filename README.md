@@ -12,10 +12,10 @@ Calc game:
 [![asciicast](https://asciinema.org/a/swV83UVOBYCr8IfmAivCUfw21.svg)](https://asciinema.org/a/swV83UVOBYCr8IfmAivCUfw21)
 
 GCD game:
-https://asciinema.org/connect/8a733ae9-aab9-4558-a090-4ea9e54c4d6e
+[![asciicast](https://asciinema.org/a/ATBrsYd7OoUolcRqyjsT4KTAM.svg)](https://asciinema.org/a/ATBrsYd7OoUolcRqyjsT4KTAM)
 
 Progression game:
-https://asciinema.org/connect/8a733ae9-aab9-4558-a090-4ea9e54c4d6e
+[![asciicast](https://asciinema.org/a/G4S4adTqNXB3gKQverNQm3zcH.svg)](https://asciinema.org/a/G4S4adTqNXB3gKQverNQm3zcH)
 
 Prime game:
-https://asciinema.org/connect/8a733ae9-aab9-4558-a090-4ea9e54c4d6e
+[![asciicast](https://asciinema.org/a/aVQcycM8CY9auAmUDTxO857RD.svg)](https://asciinema.org/a/aVQcycM8CY9auAmUDTxO857RD)
