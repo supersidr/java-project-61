@@ -1,30 +1,23 @@
 package hexlet.code;
 
-import hexlet.code.games.Game;
-
 import java.util.Scanner;
 
 public class Engine {
-    public static final int GUESS_COUNT = 3;
+    private static final Scanner scanner = new Scanner(System.in);
 
-    public static void brainGame(Game game) {
-        var userName = Messages.greetings();
-        game.messageGameGreetings();
-        var guessCount = 0;
-        while (guessCount < GUESS_COUNT) {
-            var correctAnswer = game.getAnswer();
-            Scanner scanner = new Scanner(System.in);
-            String answer = scanner.nextLine();
-            if (answer.equals(correctAnswer)) {
-                System.out.println("Correct!");
-                guessCount += 1;
-            } else {
-                Messages.loose(answer, correctAnswer, userName);
-                break;
-            }
-        }
-        if (guessCount == GUESS_COUNT) {
-            Messages.win(userName);
+    public static boolean brainGame(String gameAnswer, String gameQuestion, String gameGreeting, String userName) {
+        System.out.println(gameGreeting);
+        System.out.println(gameQuestion);
+
+        var correctAnswer = gameAnswer;
+        String answer = scanner.nextLine();
+        var result = answer.equals(correctAnswer);
+        if (result) {
+            System.out.println("Correct!");
+            return result;
+        } else {
+            Messages.loose(answer, correctAnswer, userName);
+            return result;
         }
     }
 }

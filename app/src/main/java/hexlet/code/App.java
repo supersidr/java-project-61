@@ -1,10 +1,10 @@
 package hexlet.code;
 
 import hexlet.code.games.Even;
-import hexlet.code.games.Calc;
-import hexlet.code.games.Prime;
-import hexlet.code.games.Progression;
-import hexlet.code.games.GCD;
+//import hexlet.code.games.Calc;
+//import hexlet.code.games.Prime;
+//import hexlet.code.games.Progression;
+//import hexlet.code.games.GCD;
 
 import java.util.Scanner;
 
@@ -16,7 +16,7 @@ public class App {
     public static final int PROGRESSION_GAME_ID = 5;
     public static final int PRIME_GAME_ID = 6;
 
-    public static int chooseGame() {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
@@ -28,31 +28,25 @@ public class App {
         System.out.println("0 - Exit");
         int gameNumber = scanner.nextInt();
         System.out.println("Your choice: " + gameNumber);
-//        scanner.close();
-        return gameNumber;
-    }
-
-    public static void main(String[] args) {
-        var game = chooseGame();
-        switch (game) {
+        switch (gameNumber) {
             case GREET_GAME_ID:
                 Messages.greetings();
                 break;
             case EVEN_GAME_ID:
-                Engine.brainGame(new Even());
+                Even.play();
                 break;
-            case CALC_GAME_ID:
-                Engine.brainGame(new Calc());
-                break;
-            case GCD_GAME_ID:
-                Engine.brainGame(new GCD());
-                break;
-            case PROGRESSION_GAME_ID:
-                Engine.brainGame(new Progression());
-                break;
-            case PRIME_GAME_ID:
-                Engine.brainGame(new Prime());
-                break;
+//            case CALC_GAME_ID:
+//                Engine.brainGame(new Calc());
+//                break;
+//            case GCD_GAME_ID:
+//                Engine.brainGame(new GCD());
+//                break;
+//            case PROGRESSION_GAME_ID:
+//                Engine.brainGame(new Progression());
+//                break;
+//            case PRIME_GAME_ID:
+//                Engine.brainGame(new Prime());
+//                break;
             default:
                 break;
         }
