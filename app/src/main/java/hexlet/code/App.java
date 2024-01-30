@@ -3,7 +3,8 @@ package hexlet.code;
 import hexlet.code.games.Even;
 //import hexlet.code.games.Calc;
 //import hexlet.code.games.Prime;
-//import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
 //import hexlet.code.games.GCD;
 
 import java.util.Scanner;
@@ -41,12 +42,12 @@ public class App {
 //            case GCD_GAME_ID:
 //                Engine.brainGame(new GCD());
 //                break;
-//            case PROGRESSION_GAME_ID:
-//                Engine.brainGame(new Progression());
-//                break;
-//            case PRIME_GAME_ID:
-//                Engine.brainGame(new Prime());
-//                break;
+            case PROGRESSION_GAME_ID:
+                Progression.play();
+                break;
+            case PRIME_GAME_ID:
+                Prime.play();
+                break;
             default:
                 break;
         }

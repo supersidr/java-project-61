@@ -1,35 +1,26 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Messages;
-
-import java.util.Random;
 
 public class Even {
     public static final int MAX_NUMBER = 100;
     public static final int GUESS_COUNT = 3;
     public static final String GAME_GREETING = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static final int QUESTION_ROW_NUMBER = 0;
+    private static final int ANSWER_ROW_NUMBER = 1;
+    private static String[][] questionsAnswers = new String[GUESS_COUNT][2];
 
     public static void play() {
-        var guessCount = 0;
-        var userName = Messages.greetings();
-        var result = true;
-        while (guessCount < GUESS_COUNT && result) {
-            var number = getNumber();
-            var correctAnswer = (number % 2 == 0) ? "yes" : "no";
-            var gameQuestion = "Question: " + number;
-            result = Engine.brainGame(correctAnswer, gameQuestion, GAME_GREETING, userName);
-            guessCount += 1;
+        for (int i = 0; i < GUESS_COUNT; i++) {
+            int questionNumber = Engine.getNumber(MAX_NUMBER);
+            questionsAnswers[i][QUESTION_ROW_NUMBER] = String.valueOf(questionNumber);
+            questionsAnswers[i][ANSWER_ROW_NUMBER] = (isEven(questionNumber)) ? "yes" : "no";
         }
-        if (guessCount == 3) {
-            Messages.win(userName);
-        }
+        Engine.brainGame(GAME_GREETING, questionsAnswers);
     }
 
-    private static int getNumber() {
-        Random random = new Random();
-        var number = random.nextInt(MAX_NUMBER);
-        return number;
+    private static boolean isEven(int currentNumber) {
+        return currentNumber % 2 == 0;
     }
 
 }

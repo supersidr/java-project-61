@@ -1,23 +1,35 @@
 package hexlet.code;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
-    private static final Scanner scanner = new Scanner(System.in);
+    private static final int QUESTION_ROW_NUMBER = 0;
+    private static final int ANSWER_ROW_NUMBER = 1;
 
-    public static boolean brainGame(String gameAnswer, String gameQuestion, String gameGreeting, String userName) {
+    public static void brainGame(String gameGreeting, String[][] questionsAnswers) {
+        var userName = Messages.greetings();
         System.out.println(gameGreeting);
-        System.out.println(gameQuestion);
+        Scanner scanner = new Scanner(System.in);
 
-        var correctAnswer = gameAnswer;
-        String answer = scanner.nextLine();
-        var result = answer.equals(correctAnswer);
-        if (result) {
-            System.out.println("Correct!");
-            return result;
-        } else {
-            Messages.loose(answer, correctAnswer, userName);
-            return result;
+        for (int i = 0; i < questionsAnswers.length; i++) {
+            var correctAnswer = questionsAnswers[i][ANSWER_ROW_NUMBER];
+            System.out.println("Question: " + questionsAnswers[i][QUESTION_ROW_NUMBER]);
+            System.out.print("Your answer: ");
+            String answer = scanner.nextLine();
+            var result = answer.equals(correctAnswer);
+            if (result) {
+                System.out.println("Correct!");
+            } else {
+                Messages.loose(answer, correctAnswer, userName);
+            }
+            Messages.win(userName);
         }
+    }
+
+    public static int getNumber(int value) {
+        Random random = new Random();
+        var number = random.nextInt(value);
+        return number;
     }
 }
