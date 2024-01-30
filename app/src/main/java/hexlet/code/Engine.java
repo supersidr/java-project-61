@@ -28,7 +28,7 @@ public class Engine {
         }
     }
 
-    public static int getNumber(int value) {
+    public static int getRandNumber(int value) {
         Random random = new Random();
         var number = random.nextInt(value);
         return number;

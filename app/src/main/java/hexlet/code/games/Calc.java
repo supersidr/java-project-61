@@ -15,9 +15,9 @@ public class Calc {
 
     public static void play() {
         for (int i = 0; i < GUESS_COUNT; i++) {
-            int firstNum = Engine.getNumber(MAX_NUMBER);
-            int secondNum = Engine.getNumber(MAX_NUMBER);
-            int randomIndexOperator = Engine.getNumber(MATH_ACTION_NUMBERS);
+            int firstNum = Engine.getRandNumber(MAX_NUMBER);
+            int secondNum = Engine.getRandNumber(MAX_NUMBER);
+            int randomIndexOperator = Engine.getRandNumber(MATH_ACTION_NUMBERS);
             char operator = MATH_OPERATORS[randomIndexOperator];
             switch (operator) {
                 case '+':

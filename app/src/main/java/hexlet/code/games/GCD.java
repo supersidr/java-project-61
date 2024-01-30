@@ -12,8 +12,8 @@ public class GCD {
 
     public static void play() {
         for (int i = 0; i < GUESS_COUNT; i++) {
-            int questionNumber1 = Engine.getNumber(MAX_NUMBER);
-            int questionNumber2 = Engine.getNumber(MAX_NUMBER);
+            int questionNumber1 = Engine.getRandNumber(MAX_NUMBER);
+            int questionNumber2 = Engine.getRandNumber(MAX_NUMBER);
             questionsAnswers[i][QUESTION_ROW_NUMBER] = questionNumber1 + " " + questionNumber2;
             questionsAnswers[i][ANSWER_ROW_NUMBER] = String.valueOf(calcGcd(questionNumber1, questionNumber2));
         }
