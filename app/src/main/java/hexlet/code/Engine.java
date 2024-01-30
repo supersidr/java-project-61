@@ -22,6 +22,7 @@ public class Engine {
                 System.out.println("Correct!");
             } else {
                 Messages.loose(answer, correctAnswer, userName);
+                return;
             }
             Messages.win(userName);
         }
