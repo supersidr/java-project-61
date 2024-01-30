@@ -1,10 +1,8 @@
 package hexlet.code;
 
-import hexlet.code.games.Even;
+import hexlet.code.games.*;
 //import hexlet.code.games.Calc;
 //import hexlet.code.games.Prime;
-import hexlet.code.games.Prime;
-import hexlet.code.games.Progression;
 //import hexlet.code.games.GCD;
 
 import java.util.Scanner;
@@ -36,12 +34,12 @@ public class App {
             case EVEN_GAME_ID:
                 Even.play();
                 break;
-//            case CALC_GAME_ID:
-//                Engine.brainGame(new Calc());
-//                break;
-//            case GCD_GAME_ID:
-//                Engine.brainGame(new GCD());
-//                break;
+            case CALC_GAME_ID:
+                Calc.play();
+                break;
+            case GCD_GAME_ID:
+                GCD.play();
+                break;
             case PROGRESSION_GAME_ID:
                 Progression.play();
                 break;
