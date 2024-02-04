@@ -48,7 +48,9 @@ public class App {
                 Prime.play();
                 break;
             default:
+                System.out.println("Invalid choice. Try again.");
                 break;
         }
+        scanner.close();
     }
 }

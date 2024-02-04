@@ -26,6 +26,7 @@ public class Engine {
             }
             Messages.win(userName);
         }
+        scanner.close();
     }
 
     public static int getRandNumber(int value) {
