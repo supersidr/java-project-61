@@ -12,7 +12,7 @@ public class Even {
     private static String[][] questionsAnswers = new String[GUESS_COUNT][2];
 
     public static void play() {
-        String[][] questionsAnswers = generateQuestionsAnswers();
+        questionsAnswers = generateQuestionsAnswers();
         Engine.brainGame(GAME_GREETING, questionsAnswers);
     }
 
