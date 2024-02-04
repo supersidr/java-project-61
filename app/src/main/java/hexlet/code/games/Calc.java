@@ -7,7 +7,7 @@ import hexlet.code.Utils;
 public class Calc {
     public static final int MAX_NUMBER = 100;
     public static final int MATH_ACTION_NUMBERS = 3;
-    public static final int GUESS_COUNT = 3;
+    public static final int GUESS_COUNT = Engine.ROUNDS;
     private static final String GAME_GREETING = "What is the result of the expression?";
     private static String[][] questionsAnswers = new String[GUESS_COUNT][2];
     private static final int QUESTION_ROW_NUMBER = 0;
@@ -15,6 +15,11 @@ public class Calc {
     private static final char[] MATH_OPERATORS = {'+', '-', '*'};
 
     public static void play() {
+        questionsAnswers = generateQuestionsAnswers();
+        Engine.brainGame(GAME_GREETING, questionsAnswers);
+    }
+
+    private static String[][] generateQuestionsAnswers() {
         for (int i = 0; i < GUESS_COUNT; i++) {
             int firstNum = Utils.getRandNumber(MAX_NUMBER);
             int secondNum = Utils.getRandNumber(MAX_NUMBER);
@@ -33,6 +38,6 @@ public class Calc {
             }
             questionsAnswers[i][QUESTION_ROW_NUMBER] = firstNum + " " + operator + " " + secondNum;
         }
-        Engine.brainGame(GAME_GREETING, questionsAnswers);
+        return questionsAnswers;
     }
 }

@@ -18,6 +18,11 @@ public class Progression {
 
 
     public static void play() {
+        questionsAnswers = generateQuestionsAnswers();
+        Engine.brainGame(GAME_GREETING, questionsAnswers);
+    }
+
+    private static String[][] generateQuestionsAnswers() {
         int numbersInARow = Utils.getRandNumber(MIN_SIZE_PROGRESSION, MAX_SIZE_PROGRESSION);
         String[] progression = new String[numbersInARow];
 
@@ -38,6 +43,6 @@ public class Progression {
             }
             questionsAnswers[i][QUESTION_ROW_NUMBER] = String.join(" ", progression);
         }
-        Engine.brainGame(GAME_GREETING, questionsAnswers);
+        return questionsAnswers;
     }
 }

@@ -12,12 +12,17 @@ public class Prime {
     private static String[][] questionsAnswers = new String[GUESS_COUNT][2];
 
     public static void play() {
+        questionsAnswers = generateQuestionAnswers();
+        Engine.brainGame(GAME_GREETING, questionsAnswers);
+    }
+
+    private static String[][] generateQuestionAnswers() {
         for (int i = 0; i < GUESS_COUNT; i++) {
             int questionNumber = Utils.getRandNumber(MAX_NUMBER);
             questionsAnswers[i][QUESTION_ROW_NUMBER] = String.valueOf(questionNumber);
             questionsAnswers[i][ANSWER_ROW_NUMBER] = (isPrime(questionNumber)) ? "yes" : "no";
         }
-        Engine.brainGame(GAME_GREETING, questionsAnswers);
+        return questionsAnswers;
     }
 
     public static boolean isPrime(int num) {
