@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.util.Arrays;
 
@@ -17,13 +18,13 @@ public class Progression {
 
 
     public static void play() {
-        int numbersInARow = MAX_SIZE_PROGRESSION - Engine.getRandNumber(MIN_SIZE_PROGRESSION);
+        int numbersInARow = Utils.getRandNumber(MIN_SIZE_PROGRESSION, MAX_SIZE_PROGRESSION);
         String[] progression = new String[numbersInARow];
 
         for (int i = 0; i < GUESS_COUNT; i++) {
-            int hiddenNumberIndex = Engine.getRandNumber(numbersInARow);
-            int increment = Engine.getRandNumber(MAX_PROGRESSION_STEP);
-            int currentNumber = Engine.getRandNumber(MAX_NUMBER);
+            int hiddenNumberIndex = Utils.getRandNumber(numbersInARow);
+            int increment = Utils.getRandNumber(MAX_PROGRESSION_STEP);
+            int currentNumber = Utils.getRandNumber(MAX_NUMBER);
             Arrays.fill(progression, "");
             questionsAnswers[i][QUESTION_ROW_NUMBER] = "";
             for (int j = 0; j < numbersInARow; j++) {

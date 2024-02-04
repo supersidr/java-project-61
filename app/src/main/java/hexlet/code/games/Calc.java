@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 
 public class Calc {
@@ -15,9 +16,9 @@ public class Calc {
 
     public static void play() {
         for (int i = 0; i < GUESS_COUNT; i++) {
-            int firstNum = Engine.getRandNumber(MAX_NUMBER);
-            int secondNum = Engine.getRandNumber(MAX_NUMBER);
-            int randomIndexOperator = Engine.getRandNumber(MATH_ACTION_NUMBERS);
+            int firstNum = Utils.getRandNumber(MAX_NUMBER);
+            int secondNum = Utils.getRandNumber(MAX_NUMBER);
+            int randomIndexOperator = Utils.getRandNumber(MATH_ACTION_NUMBERS);
             char operator = MATH_OPERATORS[randomIndexOperator];
             switch (operator) {
                 case '+':

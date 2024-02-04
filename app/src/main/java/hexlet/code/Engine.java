@@ -1,6 +1,5 @@
 package hexlet.code;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
@@ -29,9 +28,4 @@ public class Engine {
         scanner.close();
     }
 
-    public static int getRandNumber(int value) {
-        Random random = new Random();
-        var number = random.nextInt(value);
-        return number;
-    }
 }

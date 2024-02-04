@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Prime {
     public static final int MAX_NUMBER = 100;
@@ -12,7 +13,7 @@ public class Prime {
 
     public static void play() {
         for (int i = 0; i < GUESS_COUNT; i++) {
-            int questionNumber = Engine.getRandNumber(MAX_NUMBER);
+            int questionNumber = Utils.getRandNumber(MAX_NUMBER);
             questionsAnswers[i][QUESTION_ROW_NUMBER] = String.valueOf(questionNumber);
             questionsAnswers[i][ANSWER_ROW_NUMBER] = (isPrime(questionNumber)) ? "yes" : "no";
         }
