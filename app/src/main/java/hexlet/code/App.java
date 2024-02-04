@@ -48,7 +48,7 @@ public class App {
                 Prime.play();
                 break;
             default:
-                System.out.println("Invalid choice. Try again.");
+                System.out.println("Incorrect input. Please type numbers from 0 to 6.");
                 break;
         }
         scanner.close();
