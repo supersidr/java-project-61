@@ -6,6 +6,8 @@ public class Engine {
     private static final int QUESTION_ROW_NUMBER = 0;
     private static final int ANSWER_ROW_NUMBER = 1;
 
+    public static final int ROUNDS = 3;
+
     public static void brainGame(String gameGreeting, String[][] questionsAnswers) {
         var userName = Messages.greetings();
         System.out.println(gameGreeting);
