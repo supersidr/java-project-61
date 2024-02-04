@@ -5,7 +5,7 @@ import hexlet.code.Utils;
 
 public class Prime {
     public static final int MAX_NUMBER = 100;
-    public static final int GUESS_COUNT = 3;
+    public static final int GUESS_COUNT = Engine.ROUNDS;
     public static final String GAME_GREETING = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     private static final int QUESTION_ROW_NUMBER = 0;
     private static final int ANSWER_ROW_NUMBER = 1;

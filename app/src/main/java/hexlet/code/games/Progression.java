@@ -10,7 +10,7 @@ public class Progression {
     public static final int MAX_PROGRESSION_STEP = 10;
     public static final int MAX_SIZE_PROGRESSION = 10;
     public static final int MIN_SIZE_PROGRESSION = 5;
-    public static final int GUESS_COUNT = 3;
+    public static final int GUESS_COUNT = Engine.ROUNDS;
     private static final String GAME_GREETING = "What number is missing in the progression?";
     private static final int QUESTION_ROW_NUMBER = 0;
     private static final int ANSWER_ROW_NUMBER = 1;
