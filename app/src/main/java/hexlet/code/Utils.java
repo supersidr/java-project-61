@@ -7,7 +7,7 @@ public class Utils {
     }
 
     public static int getRandNumber(int maxValue) {
-        int number = (int) Math.floor(Math.random() * (maxValue)) + 1;
+        int number = (int) Math.floor(Math.random() * (maxValue));
         return number;
     }
 }
