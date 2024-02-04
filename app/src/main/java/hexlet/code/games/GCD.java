@@ -12,7 +12,7 @@ public class GCD {
     private static final int ANSWER_ROW_NUMBER = 1;
 
     public static void play() {
-        questionsAnswers= generateQuestionsAnswers();
+        questionsAnswers = generateQuestionsAnswers();
         Engine.brainGame(GAME_GREETING, questionsAnswers);
     }
 
