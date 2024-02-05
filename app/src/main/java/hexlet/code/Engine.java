@@ -22,10 +22,11 @@ public class Engine {
             if (result) {
                 System.out.println("Correct!");
             } else {
-                Messages.loose(answer, correctAnswer, userName);
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
+                System.out.println("Let's try again, " + userName + "!");
                 return;
             }
-            Messages.win(userName);
+            System.out.println("Congratulations, " + userName + "!");
         }
         scanner.close();
     }

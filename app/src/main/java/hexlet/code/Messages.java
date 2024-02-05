@@ -12,13 +12,4 @@ public class Messages {
         System.out.println("Hello, " + userName + "!");
         return userName;
     }
-
-    public static void win(String userName) {
-        System.out.println("Congratulations, " + userName + "!");
-    }
-
-    public static void loose(String answer, String correctAnswer, String userName) {
-        System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
-        System.out.println("Let's try again, " + userName + "!");
-    }
 }
