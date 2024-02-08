@@ -9,7 +9,7 @@ public class Engine {
     public static final int ROUNDS = 3;
 
     public static void brainGame(String gameGreeting, String[][] questionsAnswers) {
-        var userName = Messages.greetings();
+        var userName = Cli.greetings();
         System.out.println(gameGreeting);
         Scanner scanner = new Scanner(System.in);
 

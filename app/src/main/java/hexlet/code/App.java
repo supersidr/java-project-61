@@ -30,7 +30,7 @@ public class App {
         System.out.println("Your choice: " + gameNumber);
         switch (gameNumber) {
             case GREET_GAME_ID:
-                Messages.greetings();
+                Cli.greetings();
                 break;
             case EVEN_GAME_ID:
                 Even.play();

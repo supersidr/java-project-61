@@ -32,9 +32,11 @@ public class Calc {
                 case '-':
                     questionsAnswers[i][ANSWER_ROW_NUMBER] = String.valueOf(firstNum - secondNum);
                     break;
-                default:
+                case '*':
                     questionsAnswers[i][ANSWER_ROW_NUMBER] = String.valueOf(firstNum * secondNum);
                     break;
+                default:
+                    System.out.println("Unknown operator " + operator);
             }
             questionsAnswers[i][QUESTION_ROW_NUMBER] = firstNum + " " + operator + " " + secondNum;
         }
