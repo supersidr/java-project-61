@@ -29,8 +29,6 @@ public class Progression {
             int hiddenNumberIndex = Utils.getRandNumber(numbersInARow);
             int increment = Utils.getRandNumber(MAX_PROGRESSION_STEP);
             int currentNumber = Utils.getRandNumber(MAX_NUMBER);
-            Arrays.fill(progression, "");
-            questionsAnswers[i][QUESTION_ROW_NUMBER] = "";
             String[] progression = generateProgression(numbersInARow, currentNumber, increment);
             String hiddenNumber = progression[hiddenNumberIndex];
             progression[hiddenNumberIndex] = "..";
