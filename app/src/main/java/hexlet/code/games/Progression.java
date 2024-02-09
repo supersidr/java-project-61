@@ -24,7 +24,6 @@ public class Progression {
 
     private static String[][] generateQuestionsAnswers() {
         int numbersInARow = Utils.getRandNumber(MIN_SIZE_PROGRESSION, MAX_SIZE_PROGRESSION);
-        String[] progression = new String[numbersInARow];
 
         for (int i = 0; i < GUESS_COUNT; i++) {
             int hiddenNumberIndex = Utils.getRandNumber(numbersInARow);
@@ -32,17 +31,21 @@ public class Progression {
             int currentNumber = Utils.getRandNumber(MAX_NUMBER);
             Arrays.fill(progression, "");
             questionsAnswers[i][QUESTION_ROW_NUMBER] = "";
-            for (int j = 0; j < numbersInARow; j++) {
-                if (j != hiddenNumberIndex) {
-                    progression[j] = String.valueOf(currentNumber);
-                } else {
-                    progression[j] = "..";
-                    questionsAnswers[i][ANSWER_ROW_NUMBER] = String.valueOf(currentNumber);
-                }
-                currentNumber += increment;
-            }
+            String[] progression = generateProgression(numbersInARow, currentNumber, increment);
+            String hiddenNumber = progression[hiddenNumberIndex];
+            progression[hiddenNumberIndex] = "..";
+            questionsAnswers[i][ANSWER_ROW_NUMBER] = hiddenNumber;
             questionsAnswers[i][QUESTION_ROW_NUMBER] = String.join(" ", progression);
         }
         return questionsAnswers;
+    }
+
+    private static String[] generateProgression(int numbersInARow, int currentNumber, int increment) {
+        String[] progression = new String[numbersInARow];
+        for (int j = 0; j < numbersInARow; j++) {
+            progression[j] = String.valueOf(currentNumber);
+            currentNumber += increment;
+        }
+        return progression;
     }
 }
