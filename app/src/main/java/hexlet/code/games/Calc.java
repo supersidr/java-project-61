@@ -23,23 +23,33 @@ public class Calc {
         for (int i = 0; i < GUESS_COUNT; i++) {
             int firstNum = Utils.getRandNumber(MAX_NUMBER);
             int secondNum = Utils.getRandNumber(MAX_NUMBER);
-            int randomIndexOperator = Utils.getRandNumber(MATH_ACTION_NUMBERS);
-            char operator = MATH_OPERATORS[randomIndexOperator];
-            switch (operator) {
-                case '+':
-                    questionsAnswers[i][ANSWER_ROW_NUMBER] = String.valueOf(firstNum + secondNum);
-                    break;
-                case '-':
-                    questionsAnswers[i][ANSWER_ROW_NUMBER] = String.valueOf(firstNum - secondNum);
-                    break;
-                case '*':
-                    questionsAnswers[i][ANSWER_ROW_NUMBER] = String.valueOf(firstNum * secondNum);
-                    break;
-                default:
-                    System.out.println("Unknown operator " + operator);
-            }
+            char operator = getAnswer(i, firstNum, secondNum);
             questionsAnswers[i][QUESTION_ROW_NUMBER] = firstNum + " " + operator + " " + secondNum;
         }
         return questionsAnswers;
+    }
+
+    private static char getAnswer(int i, int firstNum, int secondNum) {
+        char operator = getOperator();
+        switch (operator) {
+            case '+':
+                questionsAnswers[i][ANSWER_ROW_NUMBER] = String.valueOf(firstNum + secondNum);
+                break;
+            case '-':
+                questionsAnswers[i][ANSWER_ROW_NUMBER] = String.valueOf(firstNum - secondNum);
+                break;
+            case '*':
+                questionsAnswers[i][ANSWER_ROW_NUMBER] = String.valueOf(firstNum * secondNum);
+                break;
+            default:
+                System.out.println("Unknown operator " + operator);
+        }
+        return operator;
+    }
+
+    private static char getOperator() {
+        int randomIndexOperator = Utils.getRandNumber(MATH_ACTION_NUMBERS);
+        char operator = MATH_OPERATORS[randomIndexOperator];
+        return operator;
     }
 }
